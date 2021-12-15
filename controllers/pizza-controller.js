@@ -47,7 +47,7 @@ const pizzaController = {
     // delete pizza by id
     deletePizza({ params }, res) {
         Pizza.findOneAndDelete({ _id: params.id })
-        then(dbPizzaData => {
+        .then(dbPizzaData => {
             if (!dbPizzaData) {
                 res.status(404).json({ message: 'No Pizza found' });
                 return;
